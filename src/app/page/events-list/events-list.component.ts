@@ -20,4 +20,9 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  onDelete(id) {
+    this.eventService.remove(id).subscribe(
+      next => this.eventList$ = this.eventService.getAll()
+    )
+  }
 }

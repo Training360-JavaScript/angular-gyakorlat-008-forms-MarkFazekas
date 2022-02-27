@@ -19,6 +19,10 @@ export class EventEditorComponent implements OnInit {
     switchMap( params => this.eventService.get(params['id']) )
   );
 
+  // datePattern = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+  datePattern = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
+  timePattern = /^(0[1-9]|[1][0-2])(am|pm)$/
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private eventService: EventService,
@@ -28,5 +32,7 @@ export class EventEditorComponent implements OnInit {
   ngOnInit(): void {}
 
 
+  onUpdate(eventForm, event: Event) {
 
+  }
 }
